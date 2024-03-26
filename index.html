@@ -11,13 +11,16 @@
 
     <div class="consulta">
         <form>
-            <label for="Informar">INFORME O NOME OU O CÓDIGO OU NOME DO PRODUTO</label>
-            <input type="text" placeholder="Ex: Banana ou #123">
+            <label for="Informe">INFORME O NOME OU O CÓDIGO OU NOME DO PRODUTO</label>
+            <input type="text" id="informe" placeholder="Ex: Banana ou #123">
         </form>
 
-        <button class="valor">Consulte o valor</button>
+        <button class="valor" onclick="consultar()">Consulte o valor</button>
         <button class="comprar">Comprar</button>
+        <span id="preco"></span>
     </div>
+
+    <script src="js/script.js"></script>
 </body>
 
 </html>
