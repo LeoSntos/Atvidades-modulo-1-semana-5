@@ -40,10 +40,9 @@ function consultar() {
 
 // comprar 
 
+let carrinho = []
 
-let carrinho = [] 
-
-function comprar() {   
+function comprar() {
     let input = document.getElementById('informe').value.toLocaleLowerCase()
     let achouProduto = null
 
@@ -63,4 +62,18 @@ function comprar() {
     }
 
     console.log(carrinho)
+}
+
+// Consultar valor do carrinho
+let soma = 0
+
+function consultarValor() {
+    for (let i = 0; i < carrinho.length; i++) {
+        if (carrinho[i] !== undefined) {
+            soma += parseFloat(carrinho[i].preco.replace('R$ ', '').replace('Kg', '').replace(',', '.'));
+        }
+    }
+
+    console.log(soma.toFixed(2))
+
 }
