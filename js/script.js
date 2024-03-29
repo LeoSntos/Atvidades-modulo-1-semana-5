@@ -43,6 +43,7 @@ let carrinho = []
 
 function comprar() {
     let input = document.getElementById('informe').value.toLocaleLowerCase()
+    let itensNoCarrinho = document.getElementById('itensNoCarrinho')
     let achouProduto = null
 
     for (let i = 0; i < produtos.length; i++) {
@@ -60,7 +61,7 @@ function comprar() {
         alert('produto nao encontrado')
     }
 
-    console.log(carrinho)
+    itensNoCarrinho.innerText = `Itens no carrinho ${carrinho.length}`
 }
 
 // Consultar valor do carrinho
@@ -77,3 +78,4 @@ function consultarValor() {
 
     valorTotal.innerText = `O total do seu carrinho é R$${soma.toFixed(2)}`
 }
+
