@@ -1,4 +1,3 @@
-
 // consultar o preco
 let produtos = [
     {
@@ -47,13 +46,13 @@ function comprar() {
     let achouProduto = null
 
     for (let i = 0; i < produtos.length; i++) {
-        if (produtos[i].nome.toLocaleLowerCase() === input || produtos[i].codigo === input) {
+        if (produtos[i].nome === input || produtos[i].codigo === input) {
             achouProduto = produtos[i]
         }
     }
 
     if (achouProduto) {
-        carrinho.unshift({
+        carrinho.push({
             nome: achouProduto.nome,
             preco: achouProduto.preco
         })
@@ -65,15 +64,16 @@ function comprar() {
 }
 
 // Consultar valor do carrinho
-let soma = 0
+
 
 function consultarValor() {
+    let soma = 0
+    let valorTotal = document.getElementById('valorTotal')
     for (let i = 0; i < carrinho.length; i++) {
-        if (carrinho[i] !== undefined) {
+        if (carrinho !== "") {
             soma += parseFloat(carrinho[i].preco.replace('R$ ', '').replace('Kg', '').replace(',', '.'));
         }
     }
 
-    console.log(soma.toFixed(2))
-
+    valorTotal.innerText = `O total do seu carrinho é R$${soma.toFixed(2)}`
 }
