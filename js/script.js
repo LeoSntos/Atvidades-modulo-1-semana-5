@@ -57,11 +57,26 @@ function comprar() {
             nome: achouProduto.nome,
             preco: achouProduto.preco
         })
-    } else {
-        alert('produto nao encontrado')
+
+        localStorage.setItem('carrinho', JSON.stringify(carrinho))
+    }
+
+    else {
+        alert('Produto nao encontrado')
     }
 
     itensNoCarrinho.innerText = `Itens no carrinho ${carrinho.length}`
+}
+
+// Limpar o carrinho
+
+function limparCarrinho() {
+    localStorage.removeItem('carrinho')
+
+    if (limparCarrinho) {
+        itensNoCarrinho.innerText = ""
+        valorTotal.innerText = ""
+    }
 }
 
 // Consultar valor do carrinho

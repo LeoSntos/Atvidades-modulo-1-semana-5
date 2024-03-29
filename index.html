@@ -4,31 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 
 <body>
 
-    <div class="consulta">
-        <form>
-            <label for="Informe">INFORME O NOME OU O CÓDIGO OU NOME DO PRODUTO</label>
-            <input type="text" id="informe" placeholder="Ex: Banana ou #123">
+    <main>
+        <div class="consulta">
+            <form>
+                <label for="Informe">INFORME O NOME OU O CÓDIGO OU NOME DO PRODUTO</label>
+                <input type="text" id="informe" placeholder="Ex: Banana ou #123">
 
-        </form>
+            </form>
 
-        
-        <div class="btn-group">
-            <button class="valor" onclick="consultar()">Consulte o valor</button>
-                    <button class="comprar" onclick="comprar()">Comprar</button>
-                    <button class="valorCarrinho" onclick="consultarValor()">Valor do carrinho</button>
+
+            <div class="btn-group">
+                <button class="valor" onclick="consultar()">Consulte o valor</button>
+                <button class="comprar" onclick="comprar()">Comprar</button>
+                <button class="valorCarrinho" onclick="consultarValor()">Valor do carrinho</button>
+                <button class="limparCarrinho" onclick="limparCarrinho()">Limpar o Carrinho</button>
+            </div>
+
+            <span id="preco"></span>
+            <span id="valorTotal"></span>
+            <span id="itensNoCarrinho"></span>
+
+
         </div>
-
-        <span id="preco"></span>
-        <span id="valorTotal"></span>
-        <span id="itensNoCarrinho"></span>
-
-
-    </div>
+    </main>
 
     <script src="js/script.js"></script>
 </body>
